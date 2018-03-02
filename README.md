@@ -10,6 +10,16 @@ WinSCP (Any version that supports calling and executing scripts.)
 # Python Internal and External Libraries Needed:
 os
 re (regular expressions)
-pypiwin32 (Use pip3 install pypiwin32 in command prompt to install.)
+pypiwin32 
+pypiwin32 is installed via
+```
+Use pip3 install pypiwin32 in command prompt to install.)
+```
 
+# Compiling
+If you would like to compile this program, you can use Cx\_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
 
+or by running the command:
+```
+python -m pip install cx\_Freeze --upgrade
+```
