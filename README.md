@@ -9,6 +9,7 @@ Outlook version 2003 or higher.(This is used to automatically compose an email u
 https://products.office.com/en-us/outlook/email-and-calendar-software-microsoft-outlook?tab=tabs-1
 
 WinSCP (Any version that supports calling and executing scripts.)
+
 https://winscp.net/eng/download.php
 
 # Python Internal and External Libraries Needed:
