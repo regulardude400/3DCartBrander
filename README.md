@@ -19,7 +19,13 @@ Use pip3 install pypiwin32 in command prompt to install.)
 # Compiling
 If you would like to compile this program, you can use Cx\_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
 
-or by running the command:
+or by running in command prompt:
 ```
 python -m pip install cx\_Freeze --upgrade
 ```
+You would complile via the command prompt in the appropiate directory:
+```
+python setup.py build
+```
+It should then output the build directory in the root of the program.
+The exe would be located in {ROOT}/build/exe.win32-3.x/
