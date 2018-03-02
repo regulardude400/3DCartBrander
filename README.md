@@ -4,8 +4,12 @@ This program was made to parse emails that come in from 3D cart and provide you 
 # Requirements:
 
 Windows Programs:
-Outlook version 2003 or higher.
+
+Outlook version 2003 or higher.(This is used to automatically compose an email using win32com from the pypiwin32 python library)
+https://products.office.com/en-us/outlook/email-and-calendar-software-microsoft-outlook?tab=tabs-1
+
 WinSCP (Any version that supports calling and executing scripts.)
+https://winscp.net/eng/download.php
 
 # Python Internal and External Libraries Needed:
 
@@ -14,6 +18,8 @@ os
 re (regular expressions)
 
 __External__
+_These libraries are installed typically via pip or pip3._
+
 pypiwin32 is installed via the command below.
 cx\_Freeze (only if compiling, is installed via the command below in the Compiling Section.)
 
