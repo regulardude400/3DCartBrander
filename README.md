@@ -35,3 +35,6 @@ python setup.py build
 ```
 It should then output the build directory in the root of the program.
 The exe would be located in {ROOT}/build/exe.win32-3.x/
+
+# Running the Program
+Run the 3DCartBrander.py or 3DCartBrander.exe
