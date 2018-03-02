@@ -19,7 +19,7 @@ cx\_Freeze (only if compiling, is installed via the command below in the Compili
 
 Installing pypiwin32
 ```
-Use pip3 install pypiwin32 in command prompt to install.)
+Use pip3 install pypiwin32
 ```
 
 # Compiling
