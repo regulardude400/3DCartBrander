@@ -8,10 +8,16 @@ Outlook version 2003 or higher.
 WinSCP (Any version that supports calling and executing scripts.)
 
 # Python Internal and External Libraries Needed:
+
+__Internal__
 os
 re (regular expressions)
-pypiwin32 
-pypiwin32 is installed via
+
+__External__
+pypiwin32 is installed via the command below.
+cx\_Freeze (only if compiling, is installed via the command below in the Compiling Section.)
+
+Installing pypiwin32
 ```
 Use pip3 install pypiwin32 in command prompt to install.)
 ```
