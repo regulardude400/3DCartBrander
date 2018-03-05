@@ -29,7 +29,7 @@ def parseEmail():
                         transid = re.search(r'TranCenter', lines)
                         if transid:
                             global Gtransid
-                            Gtransid = lines[18:]
+                            Gtransid = lines[15:]
 
                         #email
                         emailTo = re.search(r'Email address for merchant is', lines)
@@ -40,7 +40,7 @@ def parseEmail():
                         username = re.search(r'User Name', lines)
                         if username:
                             global Gusername
-                            Gusername = lines[14:]
+                            Gusername = lines[11:]
                             
                         #control panel 3d cart credentials
                         controlp = re.search(r'Your control panel:', lines)
@@ -110,7 +110,6 @@ def makeScpScript():
         return '"' + dirScpFile + '"'
                     
 def sendftp():
-        port = 990
         result = makeScpScript()
         command = "winscp.com /script=" + result
         os.system("start cmd /k " + command)
