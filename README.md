@@ -10,6 +10,10 @@ https://products.office.com/en-us/outlook/email-and-calendar-software-microsoft-
 
 WinSCP (Any version that supports calling and executing scripts.)
 
+Note:
+(Do a custom installation and make sure it is installed to the environment path or python will complain winscp.com doesn't exist).
+
+Download:
 https://winscp.net/eng/download.php
 
 # Python Internal and External Libraries Needed:
