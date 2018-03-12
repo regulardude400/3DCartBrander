@@ -34,7 +34,7 @@ Use pip3 install pypiwin32
 ```
 
 # Compiling
-If you would like to compile this program, you can use Cx\_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
+If you would like to compile this program, you can use Cx_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
 
 or by running in command prompt:
 ```
