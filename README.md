@@ -38,7 +38,7 @@ If you would like to compile this program, you can use Cx_Freeze located here:ht
 
 or by running in command prompt:
 ```
-python -m pip install cx\_Freeze --upgrade
+python -m pip install cx_Freeze --upgrade
 ```
 You would complile via the command prompt in the appropiate directory:
 ```
