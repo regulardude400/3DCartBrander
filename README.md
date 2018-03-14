@@ -20,8 +20,15 @@ https://winscp.net/eng/download.php
 
 pypiwin32 
 PyQt5
-
 Pyinstaller (only if compiling, is installed via the command below in the Compiling Section.)
+
+
+You can install all dependencies with:
+```
+pip install -r requirements.txt 
+```
+
+or alternatively, you may do the following commands to install the requirements.
 
 Installing pypiwin32
 ```
@@ -54,10 +61,6 @@ You would complile via running Compile.bat or the command prompt in the appropia
 pyinstaller --clean 3DCartBrander.spec
 ```
 
-Alternatively you can install all dependencies with:
-```
-pip install -r requirements.txt 
-```
 It should then output the build directory in the root of the program.
 The exe would be located in {ROOT}/dist/3DCartBrander.exe
 The gui file that qt5 creates is located also in the same folder as the exe. (Don't delete the ui file.)
