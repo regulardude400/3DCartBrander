@@ -16,21 +16,21 @@ Note:
 Download:
 https://winscp.net/eng/download.php
 
-# Python Internal and External Libraries Needed:
+# Python External Libraries Needed:
 
-__Internal__
-os
-re (regular expressions)
+pypiwin32 
+PyQt5
 
-__External__
-_These libraries are installed typically via pip or pip3._
-
-pypiwin32 is installed via the command below.
 Pyinstaller (only if compiling, is installed via the command below in the Compiling Section.)
 
 Installing pypiwin32
 ```
-Use pip3 install pypiwin32
+pip3 install pypiwin32
+```
+
+Installing PyQt5
+```
+pip3 install pyqt5
 ```
 
 # Compiling
@@ -54,6 +54,10 @@ You would complile via running Compile.bat or the command prompt in the appropia
 pyinstaller --clean 3DCartBrander.spec
 ```
 
+Alternatively you can install all dependencies with:
+```
+pip install -r requirements.txt 
+```
 It should then output the build directory in the root of the program.
 The exe would be located in {ROOT}/dist/3DCartBrander.exe
 The gui file that qt5 creates is located also in the same folder as the exe. (Don't delete the ui file.)
