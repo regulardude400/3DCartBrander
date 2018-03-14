@@ -10,6 +10,10 @@ https://products.office.com/en-us/outlook/email-and-calendar-software-microsoft-
 
 WinSCP (Any version that supports calling and executing scripts.)
 
+Note:
+(Do a custom installation and make sure it is installed to the environment path or python will complain winscp.com doesn't exist).
+
+Download:
 https://winscp.net/eng/download.php
 
 # Python Internal and External Libraries Needed:
@@ -30,11 +34,11 @@ Use pip3 install pypiwin32
 ```
 
 # Compiling
-If you would like to compile this program, you can use Cx\_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
+If you would like to compile this program, you can use Cx_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
 
 or by running in command prompt:
 ```
-python -m pip install cx\_Freeze --upgrade
+python -m pip install cx_Freeze --upgrade
 ```
 You would complile via the command prompt in the appropiate directory:
 ```
