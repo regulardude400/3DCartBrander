@@ -2,31 +2,24 @@ import sys, re, os, importlib, win32com.client as win32
 from gui3DCart import Ui_MainWindow
 from PyQt5 import QtWidgets, uic
 
-#Global variables to be used to generate the email text.
-
-Gemail = ""
-
-Gtransid = ""
-
-Gusername = ""
-
-Gcontrolp = ""
-
-Gusernamep = ""
-
-Gpasswordp = ""
-
-Ghostftp = ""
-
-Gloginftp = ""
-
-Gpassftp = ""
-
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi('dialog.ui', self)
         self.show()
+
+        #variables used to store the merchant's information.
+        self.Gemail = ""
+        self.Gtransid = ""
+        self.Gusername = ""
+        self.Gcontrolp = ""
+        self.Gusernamep = ""
+        self.Gpasswordp = ""
+        self.Ghostftp = ""
+        self.Gloginftp = ""
+        self.Gpassftp = ""
+        
+        #Program Functions
         self.ClearTextBox.clicked.connect(self.clearText) #Clear text
         self.SaveTextToFile.clicked.connect(self.saveText)#Save text to file
         self.StartProgram.clicked.connect(self.runScript) #Runs the main script
@@ -66,51 +59,42 @@ class Ui(QtWidgets.QMainWindow):
                                     #transaction center id credentials
                                     transid = re.search(r'TranCenter', lines)
                                     if transid:
-                                            global Gtransid
-                                            Gtransid = lines[15:]
+                                            self.Gtransid = lines[15:]
 
                                     #email
                                     emailTo = re.search(r'Email address for merchant is', lines)
                                     if emailTo:
-                                             global Gemail
-                                             Gemail = lines[31:]
+                                             self.Gemail = lines[31:]
                                              
                                     username = re.search(r'User Name', lines)
                                     if username:
-                                            global Gusername
-                                            Gusername = lines[11:]
+                                            self.Gusername = lines[11:]
                                             
                                     #control panel 3d cart credentials
                                     controlp = re.search(r'Your control panel:', lines)
                                     if controlp:
-                                            global Gcontrolp
-                                            Gcontrolp = lines[21:]
+                                            self.Gcontrolp = lines[21:]
                                             
                                     usernamep = re.search(r'Your username:', lines)
                                     if usernamep:
-                                            global Gusernamep
-                                            Gusernamep = lines[16:]
+                                            self.Gusernamep = lines[16:]
 
                                     passwordp = re.search(r'Your password:', lines)
                                     if passwordp:
-                                            global Gpasswordp
-                                            Gpasswordp = lines[16:]
+                                            self.Gpasswordp = lines[16:]
                                         
                                      #ftp settings
                                     hostftp = re.search(r'com\.3dcartstores\.com', lines)
-                                    if ((hostftp) and i in range(48,68)):
-                                            global Ghostftp
-                                            Ghostftp = lines[:-2]
+                                    if ((hostftp) and i in range(40,70)):
+                                            self.Ghostftp = lines[:-2]
                                             
                                     loginftp = re.search(r'\|', lines)
                                     if loginftp:
-                                            global Gloginftp
-                                            Gloginftp = lines[7:-2]
+                                            self.Gloginftp = lines[7:-2]
                                             
                                     passftp = re.search(r'Password:', lines)
-                                    if passftp and i in range(50,70):
-                                            global Gpassftp
-                                            Gpassftp = lines[10:-2]
+                                    if passftp and i in range(40,70):
+                                            self.Gpassftp = lines[10:-2]
                             file.close()
 
             except IOError:
@@ -125,7 +109,7 @@ class Ui(QtWidgets.QMainWindow):
     def createEmail(self):
         outlook = win32.Dispatch('outlook.application') #Open Outlook
         mail = outlook.CreateItem(0) #Create an email.
-        mail.To = Gemail #Send to Merchant's email that we have parsed.
+        mail.To = self.Gemail #Send to Merchant's email that we have parsed.
         mail.Subject = "" #Subject of email.
         text = ""
         mail.Body = text #Set body to the text above.
@@ -136,8 +120,9 @@ class Ui(QtWidgets.QMainWindow):
         #This method is for writing the script that will be read by winscp.
         #At the end we will invoke the program with cmd and tell winscp to read
         #the script that we create in this method.
-        
-        text2write = "open \"ftps://" + Gloginftp + ':' + Gpassftp +'@'+ Ghostftp + '\"\n'
+        print(self.Ghostftp)
+    
+        text2write = "open \"ftps://" + self.Gloginftp + ':' + self.Gpassftp +'@'+ self.Ghostftp + '\"\n'
         text2write += 'cd /keys\n' 
         text2write += 'put "c:path\to\file\gw_ids.txt"\n' #change to valid path
         text2write += 'put "c:path\to\file\gw_ids1.txt"\n' #change to valid path
@@ -151,7 +136,6 @@ class Ui(QtWidgets.QMainWindow):
                 
         dirScpFile = os.path.realpath(scpfile.name)
         result = '"' + dirScpFile + '"'
-        print("Made the SCP Script")
         command = "winscp.com /script=" + result
         os.system("start cmd /k " + command)
         
