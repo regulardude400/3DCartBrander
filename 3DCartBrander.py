@@ -4,6 +4,8 @@ from PyQt5 import QtWidgets, uic
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
+        
+        #Load the GUI
         super(Ui, self).__init__()
         uic.loadUi('dialog.ui', self)
         self.show()
