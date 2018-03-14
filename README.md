@@ -46,7 +46,7 @@ You need to edit line 7 where it says: "pathex=['C:\\PATH\\TO\\FOLDER\\THAT\\CON
 
 Change this path to a real path where to the __folder__ that contains 3DCartBrander.py.
 
-Do not put the exact path to the 3DCartBrander.PY as line 6 already knows which file to compile.
+Do not put the exact path to the 3DCartBrander.py as line 6 already knows which file to compile.
 
 
 You would complile via running Compile.bat or the command prompt in the appropiate directory:
