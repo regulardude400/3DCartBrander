@@ -26,7 +26,7 @@ __External__
 _These libraries are installed typically via pip or pip3._
 
 pypiwin32 is installed via the command below.
-cx\_Freeze (only if compiling, is installed via the command below in the Compiling Section.)
+Pyinstaller (only if compiling, is installed via the command below in the Compiling Section.)
 
 Installing pypiwin32
 ```
@@ -34,18 +34,29 @@ Use pip3 install pypiwin32
 ```
 
 # Compiling
-If you would like to compile this program, you can use Cx_Freeze located here:https://anthony-tuininga.github.io/cx_Freeze/
+If you would like to compile this program, you can use PyInstaller located here:https://www.pyinstaller.org/
 
 or by running in command prompt:
 ```
-python -m pip install cx_Freeze --upgrade
+pip install pyinstaller
 ```
-You would complile via the command prompt in the appropiate directory:
+Be sure to edit the spec file that comes with the download in the root directory.
+
+You need to edit line 7 where it says: "pathex=['C:\\PATH\\TO\\FOLDER\\THAT\\CONTAINS\\3DCartBrander.PY'],"
+
+Change this path to a real path where to the __folder__ that contains 3DCartBrander.py.
+
+Do not put the exact path to the 3DCartBrander.py as line 6 already knows which file to compile.
+
+
+You would complile via running Compile.bat or the command prompt in the appropiate directory:
 ```
-python setup.py build
+pyinstaller --clean 3DCartBrander.spec
 ```
+
 It should then output the build directory in the root of the program.
-The exe would be located in {ROOT}/build/exe.win32-3.x/
+The exe would be located in {ROOT}/dist/3DCartBrander.exe
+The gui file that qt5 creates is located also in the same folder as the exe. (Don't delete the ui file.)
 
 # Running the Program
-Run the 3DCartBrander.py or 3DCartBrander.exe
+Run the 3DCartBrander.py or 3DCartBrander.exe with the appropiate dialog.ui in the same directory.
