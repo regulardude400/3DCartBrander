@@ -123,7 +123,7 @@ class Ui(QtWidgets.QMainWindow):
     def sendftp(self):
         #This method is for writing the script that will be read by winscp.
         #At the end we will invoke the program with cmd and tell winscp to read
-        #the script that we create in this method.
+        #the script that we have created in this method.
         print(self.Ghostftp)
     
         text2write = "open \"ftps://" + self.Gloginftp + ':' + self.Gpassftp +'@'+ self.Ghostftp + '\"\n'
