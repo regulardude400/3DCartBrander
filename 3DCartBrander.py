@@ -29,13 +29,15 @@ class Ui(QtWidgets.QMainWindow):
         self.actionAbout.triggered.connect(self.aboutProgram) #Open About in Menu
         
     def aboutProgram(self):
-        aboutInfo = QMessageBox()
-        aboutInfo.setIcon(QMessageBox.Information)
-        aboutInfo.setText("About 3D Cart Brander and Emailer")
-        aboutInfo.setInformativeText("This program was created by Alvin Williams."
+        infoAbout = QtWidgets.QMessageBox() ##Message Box that doesn't run
+        infoAbout.setIcon(QtWidgets.QMessageBox.Information)
+        infoAbout.setWindowTitle("About 3DCart Brander v1.0")
+        infoAbout.setInformativeText("This program was created by Alvin Williams."
                                      "If you need help or troubleshooting please report"
                                      "the issues to me in person, via email alvin.williams1992@yahoo.com"
                                      "or via github using the issue tracker located here: https://github.com/regulardude400/3DCartBrander/issues")
+        infoAbout.exec()
+        
     def quitProgram(self):
         sys.exit() #Quit the program
         
