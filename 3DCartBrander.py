@@ -34,8 +34,7 @@ class Ui(QtWidgets.QMainWindow):
         infoAbout.setWindowTitle("About 3DCart Brander v1.0") #Set the title.
         infoAbout.setInformativeText("This program was created by Alvin Williams."
                                      "If you need help or troubleshooting please report"
-                                     "the issues to me in person, via email alvin.williams1992@yahoo.com"
-                                     "or via github using the issue tracker located here: https://github.com/regulardude400/3DCartBrander/issues") #Set the text
+                                     "the issues to me in person or via github using the issue tracker located here: https://github.com/regulardude400/3DCartBrander/issues") #Set the text
         infoAbout.exec()
         
     def quitProgram(self):
